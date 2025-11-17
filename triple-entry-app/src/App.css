@@ -1,0 +1,220 @@
+/* ===========================================================
+   SMARTCONTA PRO — UI OFICIAL
+   Plano, moderno, glass, efectos suaves, fondo animado
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --bg1: #111827;
+  --bg2: #1e3a8a;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f8fafc;
+  --text2: #cbd5e1;
+  --accent: #3b82f6;
+  --accent2: #22d3ee;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --success: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-size: 300% 300%;
+  animation: bgMove 14s ease infinite;
+  color: var(--text);
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* GRID GENERAL */
+.app-container {
+  display: grid;
+  gap: 26px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+@media (min-width: 1100px) {
+  .app-container {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+}
+
+/* TARJETAS GLASS */
+.main-card,
+.history-panel {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITULOS */
+.title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: white;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.4);
+}
+
+.section-title {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 14px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  backdrop-filter: blur(14px);
+}
+
+input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* BOTONES */
+button {
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.btn-wallet {
+  width: 100%;
+  background: rgba(255,255,255,0.10);
+  color: white;
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+}
+.btn-wallet:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  background: #2563eb;
+}
+
+.btn-secondary {
+  background: var(--success);
+  color: white;
+}
+.btn-secondary:hover {
+  background: #16a34a;
+}
+
+.btn-search {
+  background: var(--warn);
+  color: black;
+}
+.btn-search:hover {
+  background: #eab308;
+}
+
+/* HASH BOX */
+.hash-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid var(--border);
+  word-break: break-all;
+}
+
+/* ESTADOS */
+.estado {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.estado-VALIDADO {
+  background: rgba(34,197,94,0.2);
+  border-left: 4px solid var(--success);
+  color: #bbf7d0;
+}
+
+.estado-NOEXISTE {
+  background: rgba(239,68,68,0.2);
+  border-left: 4px solid var(--danger);
+  color: #fecaca;
+}
+
+.estado-FALTAVALIDAR {
+  background: rgba(245,158,11,0.25);
+  border-left: 4px solid var(--warn);
+  color: #fef3c7;
+}
+
+.estado-DISCREPANCIA {
+  background: rgba(255,115,0,0.25);
+  border-left: 4px solid #ea580c;
+  color: #ffedd5;
+}
+
+/* HISTORIAL */
+.history-item {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  backdrop-filter: blur(12px);
+}
+
+.no-history {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 20px;
+}
